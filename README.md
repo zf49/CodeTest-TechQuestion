@@ -1,5 +1,5 @@
- # php % php -S localhost:8080 to run project
+`php -S localhost:8080` to run the project
 
- # Technical Question file has been finished
+Technical Question file has been finished
 
 
