@@ -62,3 +62,6 @@ These are two of the three main front-end frameworks (Vue, React and Angular). I
 ### 7.  Explain the importance of using HTTPS (SSL/TLS) for web applications and how you would set it up.
 
 Https is safer than http, and protects data better. Https uses SSL/TLS certificates to check the server's identity and ensure communication. Usually in development Env, http is used, but when the project is launched, the protocol is switched to https. In backend development like with the .net framework, both protocol addresses are already set in the config file. Typically before launch, http requests are redirected to https to make sure access is secure.
+
+
+
