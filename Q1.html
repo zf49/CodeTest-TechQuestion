@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q1</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+  <h1>Q1</h1>
+  <hr>
+  <input type="text" id="username">
+  <button onclick="greetingUser()">Click</button>
+  <p id="welcomUser"></p>
+
+
+  <script>
+      let greetingUser = ()=>{
+        // get input content from input bar
+        const username = document.getElementById('username').value;
+
+        // interact with backedn
+        axios.post('Q1.php',{name:username}).then(res=>document.getElementById('welcomUser').innerText = res.data).catch(err=>console.log(err))
+      }
+
+  </script>
+
+
+</body>
+</html>

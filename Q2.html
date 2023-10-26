@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q2</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <h1>Q2</h1>
+    <hr>
+
+    <input type="number" step="1" id="input">
+    <button onclick="getEvenNumArr()">Click</button>
+    <p id="InputArr"></p>
+    <button id="ShowEvenNum" disabled onclick="getEvenNumFromBackEnd()">show Even Num arr</button>
+    <p id="NewArr"></p>
+
+
+    <script>
+
+        let arr = []
+        let getEvenNumArr = ()=>{
+            let inputVal = document.getElementById('input')
+            console.log(inputVal.value)
+
+            if (!Number.isInteger(parseFloat(inputVal.value))) {
+                alert('integer num')
+                inputVal.value = ''; // clear the input
+            }else{
+                arr.push(inputVal.value)
+                inputVal.value = ''
+                document.getElementById('ShowEvenNum').disabled = false;
+            }
+            // console.log(arr)
+
+            let showArr = document.getElementById('InputArr')
+
+            showArr.innerText = arr.toString()
+
+        }
+
+       let getEvenNumFromBackEnd = ()=>{
+
+           axios.post("/Q2.php",{numArr:arr}).then((res)=>{
+                if(res.data.length!=0){
+                    document.getElementById('NewArr').innerText = res.data;
+                }else{
+                    document.getElementById('NewArr').innerText = "No Even Num";
+                }
+
+
+           }).then(()=>{
+               document.getElementById('ShowEvenNum').disabled = true;
+           });
+
+       }
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
