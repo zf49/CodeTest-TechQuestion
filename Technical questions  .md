@@ -28,7 +28,7 @@ RWD is the design that enables a page to be adapted to devices with different re
 
 `undefined` indicates that a variable has been declared but not yet assigned a value, or that a property on the object does not exist.
 
-```html
+```js
 var a;
 console.log(a) // => undefined
 var b = ["1","2"];
@@ -37,7 +37,7 @@ console.log(b[3]) //=>undefiend
 
 `null` used to indicate missing or null values.
 
-```html
+```js
 var a = null; 
 ```
 
